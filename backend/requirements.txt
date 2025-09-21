@@ -1,0 +1,5 @@
+crewai>=0.193.0
+crewai-tools>=0.73.0
+fastapi
+uvicorn
+pydantic

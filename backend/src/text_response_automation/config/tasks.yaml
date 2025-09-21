@@ -1,0 +1,9 @@
+---
+process_user_text_input:
+  description: 'Analyze the user''s text input: ''{user_text}'' and provide an appropriate
+    textual response. Consider the context, tone, and intent of the input to deliver
+    a helpful and relevant answer.'
+  expected_output: A clear, helpful textual response that addresses the user's input
+    appropriately, whether it's answering a question, providing feedback, offering
+    suggestions, or engaging in conversation based on the content of '{user_text}'.
+  agent: text_response_assistant
