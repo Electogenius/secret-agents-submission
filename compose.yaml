@@ -1,4 +1,18 @@
 services:
+  frontend:
+    build:
+        context: ./frontend
+        dockerfile: Dockerfile
+    ports:
+    - target: 8000
+      published: 8000
+    deploy:
+      resources:
+        reservations:
+          cpus: "1.0"
+          memory: 512M
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import sys, urllib.request; urllib.request.urlopen(sys.argv[1]).read()", "http://localhost:8000/"]
   crewai:
     build:
         context: backend
@@ -10,3 +24,10 @@ services:
     environment:
       - CREWAI_TRACING_ENABLED=true
       - GEMINI_API_KEY=
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+      start_period: 40s
+  

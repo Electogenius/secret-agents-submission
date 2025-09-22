@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Chat & Question Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <button id="menuBtn" aria-label="Toggle menu">☰</button>
+
+  <aside id="sidebar" class="closed">
+    <nav>
+      <button data-mode="general" class="mode-btn active">General</button>
+      <button data-mode="questions" class="mode-btn">Question Generation</button>
+      <button data-mode="collections" class="mode-btn">Collections</button>
+    </nav>
+    <div class="sidebar-foot">
+      <button id="clearAll">Clear All (local)</button>
+    </div>
+  </aside>
+
+  <main id="main">
+    <header>
+      <h1 id="modeTitle">General</h1>
+      <div class="controls">
+        <button id="exportChat">Export Chat</button>
+        <button id="clearChat">Clear Chat</button>
+      </div>
+    </header>
+
+    <section id="content">
+      <!-- General Chat -->
+      <div id="chatMode" class="modePanel">
+        <div id="chatWindow" class="chatWindow" role="log" aria-live="polite"></div>
+        <form id="chatForm" class="chatForm" autocomplete="off">
+          <input id="chatInput" placeholder="Type a message and press Enter" />
+        </form>
+      </div>
+
+      <!-- Question Generation -->
+      <div id="questionMode" class="modePanel hidden">
+        <input id="topicInput" style="width: 50%;margin-bottom: 2rem;" placeholder="Enter topic and press Enter" />
+        <div class="small">Double-click any question to explain its solution.</div>
+        <div id="collectionsList" class="collectionsList"></div>
+      </div>
+
+      <!-- Collections view (same as questionMode but focused) -->
+      <div id="collectionsMode" class="modePanel hidden">
+        <div class="small">Double-click any question to explain its solution.</div>
+        <div id="collectionsList2" class="collectionsList"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
