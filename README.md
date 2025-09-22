@@ -1,4 +1,7 @@
 # Bootstrap '25 submission
+
+![Thumbnail](./thumb.png)
+
 This is a simple LLM-based personalized learning platform hosted on https://defang.io.
 
 It uses crew.ai on the backend to invoke `gemini-2.5-flash-lite` as and when needed. The frontend is a simple a static webpage.
