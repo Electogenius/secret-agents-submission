@@ -56,7 +56,12 @@ menuBtn.addEventListener('click', ()=>{
 function addBubble(who, content){
   const div = document.createElement('div');
   div.className = 'bubble ' + (who==='user' ? 'user' : 'ai');
-  div.textContent = content;
+  if (who === 'user') {
+    div.textContent = content
+  } else {
+    console.log(marked.parse(content))
+    div.innerHTML = marked.parse(content)
+  }
   chatWindow.appendChild(div);
   chatWindow.scrollTop = chatWindow.scrollHeight;
   // update state
@@ -71,7 +76,12 @@ function renderChat(){
   (state.chat || []).forEach(m => {
     const d = document.createElement('div');
     d.className = 'bubble ' + (m.who==='user' ? 'user' : 'ai');
-    d.textContent = m.text;
+    if (m.who === 'user') {
+    d.textContent = m.text
+  } else {
+    console.log(marked.parse(m.text))
+    d.innerHTML = marked.parse(m.text)
+  }
     chatWindow.appendChild(d);
   });
   chatWindow.scrollTop = chatWindow.scrollHeight;

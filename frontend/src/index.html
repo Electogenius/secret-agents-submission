@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Chat & Question Generator</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/16.3.0/lib/marked.umd.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
   <button id="menuBtn" aria-label="Toggle menu">☰</button>
@@ -40,7 +41,7 @@
 
       <!-- Question Generation -->
       <div id="questionMode" class="modePanel hidden">
-        <input id="topicInput" style="width: 50%;margin-bottom: 2rem;" placeholder="Enter topic and press Enter" />
+        <input id="topicInput" style="width: 100%;max-width: 50em;margin-bottom: 2rem;padding:10px;border-radius: 10px;" placeholder="Enter topic and press Enter" />
         <div class="small">Double-click any question to explain its solution.</div>
         <div id="collectionsList" class="collectionsList"></div>
       </div>

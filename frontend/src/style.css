@@ -5,7 +5,8 @@
   --muted:#6b7280;
   --user:#16a34a;
 }
-*{box-sizing:border-box;font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,Helvetica,Arial;background-repeat:no-repeat}
+*:not(pre, code){box-sizing:border-box;font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,Helvetica,Arial;background-repeat:no-repeat}
+
 html,body{height:100%;margin:0;background:var(--bg);color:#0f172a}
 #menuBtn{
   position:fixed;left:12px;top:12px;z-index:40;
